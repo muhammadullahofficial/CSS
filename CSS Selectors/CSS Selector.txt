@@ -1,0 +1,291 @@
+/* CSS selectors are used to select the HTML elements you want to style. Here’s a breakdown of different types of selectors you can use in CSS:
+
+1. Universal Selector
+Selects all elements on the page.
+Syntax: *
+
+* {
+  margin: 0;
+  padding: 0;
+}
+2. Element (Type) Selector
+Selects all elements of a specified type (e.g., all <p> tags).
+Syntax: element
+
+p {
+  color: blue;
+}
+3. Class Selector
+Selects all elements with a specific class attribute.
+Syntax: .className
+
+.button {
+  background-color: green;
+}
+4. ID Selector
+Selects a single element with a specific ID.
+Syntax: #idName
+
+#header {
+  font-size: 24px;
+}
+5. Attribute Selector
+Selects elements based on an attribute and its value.
+Syntax: [attribute], [attribute=value]
+
+input[type="text"] {
+  border: 1px solid black;
+}
+6. Group Selector
+Selects multiple elements by grouping them.
+Syntax: selector1, selector2, selector3
+
+h1, h2, h3 {
+  color: darkred;
+}
+7. Descendant Selector
+Selects elements that are descendants of a specified element.
+Syntax: ancestor descendant
+
+div p {
+  color: gray;
+}
+8. Child Selector
+Selects elements that are direct children of a specified element.
+Syntax: parent > child
+
+ul > li {
+  color: green;
+}
+9. Adjacent Sibling Selector
+Selects an element that is immediately after a specified element.
+The style will apply on second element only.
+Syntax: element1 + element2
+
+h1 + p {
+  margin-top: 0;
+}
+10. General Sibling Selector
+Selects all elements that are siblings after a specified element.
+Syntax: element1 ~ element2
+
+h1 ~ p {
+  color: orange;
+}
+11. Pseudo-Class Selectors
+Select elements in a specific state or condition.
+Syntax: selector:pseudo-class
+Common Pseudo-Classes:
+:hover – Applies styles when an element is hovered.
+:focus – Applies styles when an element is focused.
+:nth-child(n) – Selects the nth child of an element.
+
+
+
+
+Pseudo-class selectors in CSS are special keywords added to selectors that specify a specific state or position of elements, without requiring extra classes or IDs in the HTML. They are particularly useful for targeting elements based on their state (like when they’re being hovered over) or structural position (like first or last child in a list).
+
+Here’s a breakdown of some commonly used pseudo-classes:
+
+1. Dynamic State Pseudo-Classes
+These apply styles based on an element’s interactive state, which is especially useful for links, buttons, or other user-interactive elements.
+
+:hover – Styles an element when the user hovers over it.
+
+button:hover {
+  background-color: yellow;
+}
+:active – Styles an element when it's being clicked or activated.
+
+a:active {
+  color: red;
+}
+:focus – Styles an element when it's focused (like when a user clicks on an input field).
+
+input:focus {
+  border-color: blue;
+}
+2. Structural Pseudo-Classes
+These target elements based on their position within a parent, regardless of classes or IDs.
+
+:first-child – Selects the first child of a parent.
+
+p:first-child {
+  font-weight: bold;
+}
+:last-child – Selects the last child of a parent.
+
+li:last-child {
+  margin-bottom: 0;
+}
+:nth-child(n) – Selects the nth child of a parent (where n can be a number, keyword, or formula).
+
+li:nth-child(2) {
+  color: green;
+}
+You can use formulas like 2n (every even child), 2n+1 (every odd child), or specific numbers.
+:nth-of-type(n) – Selects the nth child of a parent, but only of the specified type.
+
+p:nth-of-type(2) {
+  color: purple;
+}
+:only-child – Selects an element if it's the only child of its parent.
+
+div:only-child {
+  background-color: lightblue;
+}
+3. Form Pseudo-Classes
+These are helpful for styling form elements based on their state.
+
+:checked – Styles an element that is checked, such as checkboxes or radio buttons.
+
+input[type="checkbox"]:checked {
+  border-color: green;
+}
+:disabled – Styles elements that are disabled, like form inputs.
+
+input:disabled {
+  background-color: #ddd;
+}
+:enabled – Styles elements that are enabled, like form inputs.
+
+input:enabled {
+  background-color: white;
+}
+4. Other Useful Pseudo-Classes
+:not(selector) – Selects every element that does not match the specified selector.
+
+p:not(.special) {
+  color: gray;
+}
+:first-of-type / :last-of-type – Selects the first or last child of a particular type within a parent.
+
+h2:first-of-type {
+  color: orange;
+}
+:empty – Selects elements with no children (including text nodes).
+
+div:empty {
+  display: none;
+}
+Example: Combining Pseudo-Classes
+You can combine pseudo-classes for more specific selections:
+
+
+button:hover:focus {
+  background-color: green;
+  color: white;
+}
+Use Cases for Pseudo-Classes
+Pseudo-classes allow you to create dynamic, interactive, and responsive styles without adding extra HTML classes or IDs. They’re useful in a wide range of scenarios, from styling navigation menus to designing interactive forms and creating visually engaging lists or cards.
+
+a:hover {
+  color: red;
+}
+
+
+
+
+12. Pseudo-Element Selectors
+Style a part of an element.
+Syntax: selector::pseudo-element
+Common Pseudo-Elements:
+::before – Adds content before an element’s content.
+::after – Adds content after an element’s content.
+::first-letter – Styles the first letter of an element.
+
+p::first-line {
+  font-weight: bold;
+}
+
+
+
+Pseudo-element selectors in CSS are used to style specific parts of an element, such as the first line of text or content before/after an element. Unlike pseudo-classes (which select elements based on their state or position), pseudo-elements allow you to target specific parts within an element, enabling more fine-grained styling.
+
+Pseudo-elements are typically indicated with a double colon (::), though the single colon (:) is still supported for older CSS versions.
+
+Commonly Used Pseudo-Elements
+Here are some widely used pseudo-elements and how they work:
+
+1. ::before
+The ::before pseudo-element is used to insert content before the content of an element. This can be text, symbols, or decorative elements, and it's particularly useful for adding icons or decorative styling without modifying HTML.
+
+h1::before {
+  content: "⭐ ";
+  color: gold;
+}
+Explanation: The above example will insert a gold star (⭐) before every <h1> element.
+2. ::after
+The ::after pseudo-element is similar to ::before, but it inserts content after the element’s main content.
+
+p::after {
+  content: " 📖";
+  color: gray;
+}
+Explanation: This adds a book emoji (📖) after each <p> element, which can be useful for adding icons or decorative indicators at the end of text.
+3. ::first-line
+The ::first-line pseudo-element applies styles only to the first line of text within a block-level element, such as a paragraph. This is useful for emphasizing the beginning of a paragraph or section.
+
+p::first-line {
+  font-weight: bold;
+  color: darkblue;
+}
+Explanation: In this example, the first line of every <p> element will be bold and dark blue, giving it a distinct appearance.
+4. ::first-letter
+The ::first-letter pseudo-element styles only the first letter of an element. This is commonly used for typographic effects, such as drop caps at the start of a paragraph.
+
+p::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+  color: darkred;
+}
+Explanation: Here, the first letter of every <p> will be enlarged, bolded, and colored dark red, creating a classic drop-cap effect often seen in print media.
+5. ::selection
+The ::selection pseudo-element allows you to style the part of an element that a user has selected, such as text highlighted by dragging a cursor over it. This is often used to customize the highlight color for a better user experience.
+
+::selection {
+  background-color: lightblue;
+  color: black;
+}
+Explanation: When users select text on the page, the selected area will appear with a light blue background and black text.
+6. ::marker (for lists)
+The ::marker pseudo-element targets the bullet or numbering of list items in ordered and unordered lists. It’s useful for customizing the appearance of list markers.
+
+li::marker {
+  color: red;
+  font-size: 1.2em;
+}
+Explanation: This changes the color of the list markers (bullets or numbers) in each <li> element to red and slightly increases their size.
+Example: Combining Pseudo-Elements
+You can combine multiple pseudo-elements and regular CSS rules for sophisticated styling. For example:
+h2::before {
+  content: "🌟 ";
+  color: gold;
+}
+
+h2::after {
+  content: " 🌟";
+  color: gold;
+}
+
+h2::first-letter {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+Explanation: This will add a star (🌟) before and after each <h2>, and style the first letter to be larger and bold.
+Use Cases for Pseudo-Elements
+Pseudo-elements are invaluable for adding decorative content or emphasizing parts of text without modifying HTML. They’re commonly used to:
+
+Add icons or symbols before/after elements.
+Create typographic effects, such as drop caps or highlighted first lines.
+Customize user interactions, like text selection and list markers.
+Enhance design consistency without additional markup.
+
+
+
+
+13. Combinators
+Descendant ( ) – Selects elements that are nested within another element.
+Child (>) – Selects elements that are direct children.
+Adjacent Sibling (+) – Selects elements immediately following another element.
+General Sibling (~) – Selects all elements that are siblings of another element. */
