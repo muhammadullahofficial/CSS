@@ -5,7 +5,7 @@ Welcome to my CSS repository! This repository is a growing collection of CSS cod
 To start using the code and projects in this repository, you can clone it to your local machine using:
 
 ```bash
-git clone https://github.com/your-username/css-repo.git
+git clone https://github.com/muhammadullahofficial/CSS.git
 Alternatively, you can download the ZIP file directly from GitHub.
 
 This Repo Contains:
