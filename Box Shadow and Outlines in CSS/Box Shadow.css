@@ -1,0 +1,160 @@
+/* 
+The box-shadow property in CSS is used to apply shadow effects to elements, creating a depth effect on the page. It lets you customize shadows with color, size, blur, spread, and position.
+
+Basic Syntax
+
+box-shadow: offset-x offset-y blur-radius spread-radius color;
+offset-x: Horizontal distance of the shadow. Positive values move it to the right; negative values move it to the left.
+offset-y: Vertical distance of the shadow. Positive values move it down; negative values move it up.
+blur-radius (optional): Controls the blur. Higher values make the shadow softer. Default is 0 (no blur).
+spread-radius (optional): Expands or contracts the shadow. Positive values expand, and negative values shrink it.
+color (optional): Color of the shadow. Can be any CSS color format, like rgba() for transparency.
+Example Usage
+1. Simple Shadow
+
+.simple-shadow {
+    box-shadow: 5px 5px 10px gray;
+}
+This example creates a shadow with:
+
+5px offset to the right and 5px down,
+10px blur,
+Gray color.
+2. Inset Shadow
+By default, shadows are outside the element. Adding the inset keyword places the shadow inside the element.
+
+
+.inset-shadow {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+This creates a shadow inside the element with a 10px blur and half-opacity black color.
+
+3. Multiple Shadows
+You can apply multiple shadows by separating them with commas.
+
+.multi-shadow {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgba(255, 255, 255, 0.5);
+}
+In this example:
+
+The first shadow is a soft, black shadow to the bottom right.
+The second is a soft, white shadow to the top left, creating a "glow" effect.
+4. No Blur or Spread
+
+.no-blur-spread {
+    box-shadow: 10px 10px red;
+}
+Here, the shadow is sharp (no blur) and uses only offsets and color, creating a more defined look.
+
+Examples in Action
+
+<div class="simple-shadow">Simple Shadow</div>
+<div class="inset-shadow">Inset Shadow</div>
+<div class="multi-shadow">Multiple Shadows</div>
+<div class="no-blur-spread">No Blur or Spread</div>
+Combining Shadows with Other Effects
+The box-shadow property can work well with border-radius for rounded shadows and transform for positioning or scaling the shadow along with the element.
+
+
+.rounded-shadow {
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+Summary of Common Values
+Property	Purpose
+offset-x	Horizontal shadow position
+offset-y	Vertical shadow position
+blur-radius	Shadow softness
+spread-radius	Shadow size adjustment
+color	Shadow color
+inset	Moves shadow inside the element
+The box-shadow property is versatile, allowing you to achieve effects from subtle, realistic shadows to dramatic, creative designs. */
+
+.first {
+  width: 70%;
+  height: 40%;
+  border: 2px solid red;
+  box-shadow: 7px 7px 20px 6px greenyellow;
+}
+
+/* The outline property in CSS is used to create a line around an element's border. Unlike borders, outlines don’t occupy space and don’t affect the layout, making them great for highlighting or focus effects. Here’s how to work with outlines in CSS:
+
+Basic Syntax
+
+outline: outline-width outline-style outline-color;
+outline-width: The thickness of the outline. Common values are thin, medium, thick, or a specific size like 2px.
+outline-style: Defines the style of the outline. Options include solid, dashed, dotted, double, and more.
+outline-color: Specifies the color. It can be any valid CSS color (e.g., red, #f00, rgba(0, 0, 0, 0.5)).
+Example Usage
+1. Simple Outline
+
+.simple-outline {
+    outline: 2px solid blue;
+}
+This creates a 2px solid blue outline around the element.
+
+2. Dotted Outline
+
+.dotted-outline {
+    outline: 3px dotted green;
+}
+This applies a 3px green dotted outline, useful for drawing attention to certain elements.
+
+3. Custom Outline Color
+
+.custom-outline-color {
+    outline: 2px solid rgba(255, 0, 0, 0.5);
+}
+In this example, a half-transparent red outline is created, using rgba() for the color.
+
+Outline Offset
+The outline-offset property adds space between the element’s border and the outline. Positive values move the outline outward, while negative values move it inward.
+
+.offset-outline {
+    outline: 2px solid black;
+    outline-offset: 5px;
+}
+This creates a 5px gap between the border and the outline.
+
+Outline Shorthand Property
+You can set outline properties in one line with the shorthand:
+
+.outline-shorthand {
+    outline: 4px dashed purple;
+    outline-offset: 3px;
+}
+Removing Outlines (e.g., on Focus)
+Browsers apply outlines by default for accessibility (e.g., when focusing on links or buttons). You can remove these outlines but be careful, as this can reduce accessibility. If you remove outlines, consider adding other focus indicators (like a background color change) to maintain usability.
+
+.button-no-outline:focus {
+    outline: none;
+}
+Practical Example: Focus Outline
+Outlines are commonly used to enhance focus states, especially for keyboard users. Here’s an example where we add an outline on focus:
+
+.focus-outline:focus {
+    outline: 2px dashed orange;
+    outline-offset: 3px;
+}
+Examples in Action
+
+<button class="simple-outline">Simple Outline</button>
+<button class="dotted-outline">Dotted Outline</button>
+<button class="offset-outline">Outline with Offset</button>
+<button class="focus-outline">Focus Outline</button>
+<button class="button-no-outline">No Outline</button>
+Summary of Common Values
+Property	Purpose
+outline-width	Controls outline thickness
+outline-style	Sets style (e.g., solid, dashed)
+outline-color	Defines color
+outline-offset	Adjusts space between border and outline
+The outline property is ideal for emphasizing elements without impacting layout. With customization options, outlines can be used for aesthetic effects and accessibility improvements. */
+
+.part2 {
+  width: 70vw;
+  height: 30vh;
+  border: 2px solid green;
+  margin: 23px;
+  outline: 8px dotted red;
+}
