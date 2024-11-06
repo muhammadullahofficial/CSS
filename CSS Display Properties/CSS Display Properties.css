@@ -1,0 +1,17 @@
+div,
+p,
+h1 {
+  display: inline-block;
+  border: 2px solid green;
+  padding: 20px;
+  margin: 20px;
+}
+h1 {
+  width: 440px;
+  height: 240px;
+  /* display: none; 
+  visibility: hidden;*/
+}
+a {
+  display: block;
+}
