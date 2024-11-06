@@ -1,0 +1,56 @@
+/* In CSS, units define the measurement of elements on a webpage, controlling aspects like size, margin, padding, and font. CSS offers various units, and they generally fall into two main categories: absolute and relative units. Here’s an overview:
+
+1. Absolute Units
+Absolute units represent fixed values and do not change with the viewport or parent elements. They’re ideal for print layouts but less adaptable for responsive web design.
+
+px (Pixels): The most commonly used unit. Pixels are fixed-size dots that vary based on the screen's resolution.
+in (Inches): One inch equals 96 pixels, mainly used for print.
+cm (Centimeters) and mm (Millimeters): Used for physical measurements, like when printing content.
+pt (Points): Often used in typography; one point is 1/72 of an inch.
+pc (Picas): Also a typographic unit, where one pica equals 12 points.
+2. Relative Units
+Relative units are dynamic and scale based on factors like the parent element's size or the viewport. They’re essential for responsive design.
+
+% (Percentage): Sets the size relative to the parent element’s size. For example, width: 50% makes an element half the width of its container.
+em: Refers to the font size of the parent element. For example, 2em is twice the font size of the parent.
+rem (Root EM): Relative to the root (HTML) element’s font size, rather than the parent element. Useful for consistent scaling across elements.
+vw (Viewport Width) and vh (Viewport Height): Based on the viewport size. 1vw equals 1% of the viewport’s width, and 1vh equals 1% of the viewport’s height.
+vmin and vmax: Adapt based on the viewport dimensions. vmin uses the smaller dimension (width or height), and vmax uses the larger dimension.
+3. Special Units
+CSS also has some specialized units that offer additional control over sizing:
+
+ch: Based on the width of the character 0 in the font. Useful for making text or input fields consistent across different fonts.
+ex: Based on the height of the lowercase x. This unit is rarely used today, as it can vary significantly.
+fr (Fraction): Primarily used in CSS Grid layouts. It divides space into fractions of the available space in a container.
+Choosing the Right Units
+Absolute units (like px) can be useful for elements you want to keep fixed in size, but they’re usually best avoided in responsive layouts.
+Relative units (like %, em, rem, vw, and vh) are better for creating flexible and responsive designs.
+Use fr for grid-based layouts and dynamic distribution of space within CSS Grid. */
+
+html {
+  width: 99vw;
+  background-color: rgb(0, 204, 240);
+  height: 99vh;
+  box-sizing: border-box;
+}
+
+.parent {
+  width: 500px;
+  background-color: rgb(111, 224, 36);
+  height: 400px;
+}
+
+.child {
+  width: 50%;
+  height: 50%;
+  background-color: blue;
+  font-size: 24px;
+}
+.second {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(223, 36, 176);
+}
+.smallest {
+  font-size: 0.5em;
+}
