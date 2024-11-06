@@ -1,0 +1,75 @@
+/* Here’s a step-by-step breakdown of CSS specificity:
+
+Step 1: Understand the Specificity Hierarchy
+The four types of selectors in CSS are weighted by specificity, from the lowest to the highest:
+
+Type Selectors (e.g., h1, p, div) and Pseudo-elements (e.g., ::before, ::after)
+Class Selectors (e.g., .example), Attribute Selectors (e.g., [type="text"]), and Pseudo-classes (e.g., :hover, :first-child)
+ID Selectors (e.g., #header)
+Inline Styles (e.g., style="color: blue;" directly added to an HTML tag)
+In terms of specificity strength, inline styles are the most powerful, followed by IDs, then classes, attributes, and pseudo-classes, and finally element types.
+
+Step 2: Learn the Specificity Scoring System
+CSS assigns a specificity score in the format of (a, b, c, d), where:
+
+a = 1 if there’s an inline style, else 0.
+b = Number of ID selectors.
+c = Number of classes, attributes, and pseudo-classes.
+d = Number of type selectors and pseudo-elements.
+For example:
+
+Inline style on an element (e.g., style="color: red;") gives a score of (1, 0, 0, 0).
+An ID selector like #header has a score of (0, 1, 0, 0).
+A class selector like .box or pseudo-class like :hover gives a score of (0, 0, 1, 0).
+A type selector like p gives a score of (0, 0, 0, 1).
+Step 3: Compare Specificity Scores
+When multiple selectors target the same element, compare the scores from left to right (a, b, c, d). The selector with the higher score applies.
+
+Example:
+For the selectors below:
+
+.header p has a score of (0, 0, 1, 1)
+#main .header p has a score of (0, 1, 1, 1)
+The second selector (#main .header p) has a higher specificity due to the ID selector, so it wins even though it appears later in the stylesheet.
+
+Step 4: Apply the “Last One Wins” Rule
+If selectors have equal specificity scores, the last one defined in the stylesheet takes precedence.
+
+Example:
+
+p {
+  color: blue;
+}
+p {
+  color: green;
+}
+In this case, the p element’s color will be green because the second p selector appears later in the stylesheet, despite both having the same specificity.
+
+Step 5: Avoid Overusing !important
+Using !important overrides the normal specificity rules, forcing that style to apply regardless of specificity. Although powerful, !important should be used sparingly to prevent styling conflicts and make your CSS easier to manage.
+
+Summary Table for Specificity
+Selector Example	Specificity Score (a, b, c, d)
+style="color: red;"	(1000)
+#unique	(100)
+.class, :hover, [type]	(10)
+div, p, ::after	(1) */
+
+* {
+  color: blue;
+  font-family: "poppins";
+}
+
+p {
+  color: blueviolet;
+}
+#second {
+  color: darkgreen;
+}
+
+.second {
+  color: crimson;
+}
+h2 {
+  color: khaki;
+}
