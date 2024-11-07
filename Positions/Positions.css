@@ -1,0 +1,163 @@
+/* 
+The position property in CSS controls how elements are positioned in the layout of a webpage. It determines the positioning method and, in some cases, allows you to adjust the exact placement of an element. Here’s a breakdown of the main values for the position property and how each one works:
+
+1. static
+Default Position: All elements are positioned static by default.
+
+Behavior: The element is positioned according to the normal flow of the document, without any additional offset (like top, right, bottom, or left).
+
+Use Case: For elements you don’t need to move or adjust manually within the layout.
+
+position: static;
+2. relative
+Relative to Itself: The element is positioned relative to its original position in the normal document flow.
+
+Offsets: You can use top, right, bottom, and left to nudge the element from where it would naturally appear.
+
+Behavior: Other elements still occupy space around it as if it were in its original spot.
+
+Use Case: Useful for slightly adjusting an element’s position or creating a reference point for absolutely positioned child elements.
+
+position: relative;
+top: 10px;
+left: 20px;
+3. absolute
+Relative to Nearest Positioned Ancestor: An absolutely positioned element is removed from the normal document flow and positioned relative to the nearest positioned ancestor (relative, absolute, fixed, or sticky). If no such ancestor exists, it is positioned relative to the <html> (viewport).
+
+Offsets: You can specify top, right, bottom, and left values to place it precisely within its containing block.
+
+Behavior: Other elements do not see the absolute element as taking up space, so it can overlap or sit behind them.
+
+Use Case: Commonly used for dropdowns, modals, or elements that need to be in a precise location relative to another element.
+
+css
+Copy code
+position: absolute;
+top: 0;
+right: 0;
+4. fixed
+Relative to the Viewport: The element is removed from the document flow and positioned relative to the viewport. It stays in place even when the page is scrolled.
+
+Offsets: You can use top, right, bottom, and left values to position the element at an exact location in the viewport.
+
+Behavior: The element does not move with page scroll, so it’s ideal for sticky headers, footers, or sidebars.
+
+Use Case: Useful for creating elements that should stay visible regardless of page scrolling, like navigation bars or "back to top" buttons.
+
+position: fixed;
+bottom: 10px;
+right: 10px;
+5. sticky
+Hybrid of relative and fixed: A sticky element is treated as relative until it reaches a specified scroll position, then it behaves like fixed.
+
+Offsets: You can use top, right, bottom, or left to control when and where it becomes "stuck" as the user scrolls.
+
+Behavior: This element will scroll normally with the page until it hits the set offset, then it will "stick" in place.
+
+Use Case: Commonly used for headers, sidebars, or table columns that need to stay visible only within a particular scrolling context.
+
+position: sticky;
+top: 0;  Sticks to the top of the container when scrolled 
+Note: For position: sticky; to work, the element must be within a scrollable container, and the container should have a defined height.
+
+Example of Using position in CSS
+Here’s an example that shows various uses of position:
+
+
+<div class="container">
+  <div class="box static">Static</div>
+  <div class="box relative">Relative</div>
+  <div class="box absolute">Absolute</div>
+  <div class="box fixed">Fixed</div>
+  <div class="box sticky">Sticky</div>
+</div>
+
+.container {
+  position: relative;
+  height: 1000px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightblue;
+}
+
+.static {
+  position: static;
+}
+
+.relative {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+.absolute {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.sticky {
+  position: sticky;
+  top: 10px;
+}
+Summary
+Value	Description	Offset Behavior
+static	Default, no special positioning	None
+relative	Positioned relative to itself	Adjusts using top, right, etc.
+absolute	Positioned relative to nearest positioned ancestor, or the viewport if none is found	Adjusts using top, right, etc.
+fixed	Positioned relative to the viewport, does not move on scroll	Adjusts using top, right, etc.
+sticky	Behaves like relative until a specified scroll point, then behaves like fixed	Adjusts using top, right, etc.
+Understanding the position property is essential for creating complex, layered layouts in CSS, enabling precise control over element placement. */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  width: 90vw;
+  height: 190vh;
+  border: 2px solid black;
+  position: relative;
+}
+.child {
+  width: 88%;
+  height: 12%;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+.child1 {
+  background-color: aqua;
+  left: 10px;
+  top: 22px;
+  position: relative;
+}
+.child2 {
+  background-color: brown;
+  z-index: 2;
+  position: sticky;
+  top: 20px;
+  left: 24px;
+}
+.child3 {
+  background-color: rgb(25, 211, 19);
+  z-index: 1;
+  position: relative;
+}
+.child4 {
+  background-color: dodgerblue;
+  position: absolute;
+  bottom: 43px;
+  left: 43px;
+}
