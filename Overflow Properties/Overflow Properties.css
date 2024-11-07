@@ -1,0 +1,84 @@
+/* 
+CSS overflow properties control what happens when content overflows the boundaries of its container. Let's break down the main overflow properties and their values:
+
+1. overflow Property
+The overflow property applies to block elements (like div, section, p, etc.) and determines what happens when the content overflows the element's box. It accepts the following values:
+
+visible (default): Content that overflows the container's boundaries remains visible. No clipping occurs, meaning content extends outside the container's box.
+
+overflow: visible;
+hidden: Content that overflows the container is clipped, meaning it gets cut off at the container's edges and is not displayed.
+
+overflow: hidden;
+scroll: Adds both horizontal and vertical scrollbars to the container, regardless of whether the content actually overflows or not. This allows users to scroll within the container to see overflowed content.
+
+overflow: scroll;
+auto: Adds scrollbars only if the content overflows. If there’s no overflow, no scrollbar is shown. It’s an adaptive option that provides scrollbars only when necessary.
+
+overflow: auto;
+clip: Similar to hidden, clip simply hides the content that overflows but without providing a scrolling option.
+
+overflow: clip;
+Note: The shorthand overflow property applies to both horizontal and vertical overflow simultaneously. To control each axis individually, use overflow-x and overflow-y.
+
+2. overflow-x and overflow-y
+These properties control overflow independently on the horizontal (x) and vertical (y) axes:
+
+overflow-x: Controls overflow on the horizontal axis.
+
+overflow-x: auto;
+overflow-y: Controls overflow on the vertical axis.
+
+overflow-y: scroll;
+You can use these properties to, for example, allow vertical scrolling while clipping the content horizontally:
+
+overflow-x: hidden;
+overflow-y: auto;
+3. overflow-wrap
+The overflow-wrap property is used with text content and determines how the browser handles words that might overflow the container’s width.
+
+normal: Words only break at normal line breaks.
+break-word: Words will break if necessary to prevent overflow.
+Example:
+
+overflow-wrap: break-word;
+4. text-overflow
+The text-overflow property handles how to represent overflowed text when it’s clipped. It's commonly used with overflow: hidden; and white-space: nowrap;.
+
+clip: Cuts off the text without any visual indication.
+ellipsis: Displays an ellipsis (...) to indicate clipped text.
+Example:
+
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+Summary of Typical Use Cases
+Showing Scrollbars Only When Needed:
+
+overflow: auto;
+Clipping Overflow without Scrollbars:
+
+overflow: hidden;
+Adding Ellipsis to Overflowed Text:
+
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+These properties help control and manage content overflow in flexible and visually appealing ways, especially for layouts with limited space or specific content boundaries. */
+.box {
+  width: 30vw;
+  height: 30vh;
+  border: 2px solid black;
+  /* overflow: visible; Default */
+
+  /* overflow: hidden; Hide the extra content */
+  /* overflow: scroll; 
+  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: hidden
+  overflow: clip;;
+  overflow-wrap: break-word;*/
+  overflow: auto;
+  box-shadow: 10px 13px 20px black;
+  margin: 40px;
+}
