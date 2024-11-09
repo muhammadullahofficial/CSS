@@ -66,5 +66,28 @@ h1::after {
 input::placeholder {
   color: red;
 }
+.parent {
+  background-color: gray;
+  color: yellow;
+}
 
+.children::before {
+  content: "😍";
+}
+.children:hover {
+  color: red;
+}
+.children:active {
+  cursor: pointer;
+}
+.children::first-letter {
+  font-size: 20px;
+}
+p::first-line {
+  font-size: 25px;
+  color: green;
+}
+p::first-letter {
+  font-size: 40px;
+}
 /* This file is written by Codig Hero */
