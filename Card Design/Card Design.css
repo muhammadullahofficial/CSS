@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #e2b3b377;
+  font-family: poppins;
+  color: gray;
+}
+div {
+  background-color: white;
+  width: 30vw;
+  height: 98vh;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+img {
+  width: 97%;
+  border-radius: 10px;
+  margin: 3px;
+}
+
+span {
+  border: 2px solid gray;
+  margin: 20px 15px;
+  border-radius: 13px;
+  padding: 1px 8px;
+}
+h2 {
+  margin: 10px 8px;
+  color: black;
+}
+button {
+  position: relative;
+  left: 35%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  background-color: rgb(163, 163, 255);
+  color: rgb(43, 43, 247);
+}
