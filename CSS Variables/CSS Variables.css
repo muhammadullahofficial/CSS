@@ -1,0 +1,155 @@
+/* CSS variables, also called "custom properties," allow you to store values that you can reuse throughout your CSS. They start with -- and are often defined inside the :root selector to make them globally accessible across the entire stylesheet. Here’s a breakdown of how they work and why they’re useful:
+
+Declaring CSS Variables
+To declare a variable, you typically use the :root selector, which represents the document's root element, making the variables available anywhere in the CSS.
+
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-size: 16px;
+}
+Using CSS Variables
+To use a variable, you reference it with the var() function.
+
+body {
+  color: var(--primary-color);
+  font-size: var(--font-size);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: var(--font-size);
+}
+Benefits of CSS Variables
+Easy Theme Switching: You can quickly change themes by modifying variable values.
+Maintainability: Update a value in one place without manually updating every instance.
+Media Queries Compatibility: CSS variables can be used within media queries to adapt based on screen sizes.
+Example with Media Queries
+CSS variables can also adapt to different screen sizes by redefining values within media queries.
+
+:root {
+  --font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --font-size: 14px;
+  }
+}
+
+p {
+  font-size: var(--font-size);
+}
+This flexibility makes CSS variables a powerful tool for making your stylesheets more dynamic and easier to maintain. 
+
+CSS variables are very versatile and can hold a wide range of values, which makes them powerful tools for creating adaptable and maintainable styles. Here’s a list of common types of values CSS variables can store:
+
+1. Colors
+CSS variables can hold any color value, including named colors, hex codes, RGB, RGBA, HSL, and HSLA values.
+
+:root {
+  --primary-color: #3498db;
+  --text-color: rgba(255, 255, 255, 0.8);
+}
+2. Lengths
+They can store length units like px, em, rem, %, vh, vw, cm, etc.
+
+:root {
+  --padding: 20px;
+  --max-width: 90vw;
+}
+3. Font Sizes
+CSS variables can hold font sizes, either as specific units (like 16px or 1.2rem) or relative sizes like small, medium, large.
+
+:root {
+  --base-font-size: 16px;
+  --heading-size: 2rem;
+}
+4. Percentages
+Useful for defining responsive properties or controlling component widths, heights, and other properties that rely on percentages.
+
+:root {
+  --container-width: 80%;
+}
+5. Animation Values
+Store values for animations, including durations, delays, and even easing functions.
+
+:root {
+  --animation-duration: 0.3s;
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+6. URLs
+They can store URLs for background images, icons, and other assets.
+
+:root {
+  --background-img: url('images/background.jpg');
+}
+
+body {
+  background-image: var(--background-img);
+}
+7. Booleans and Flags (as Text)
+You can store simple textual flags or booleans, such as true or false (helpful for custom CSS logic).
+
+:root {
+  --is-dark-theme: true;
+}
+8. Custom Text Values
+Hold custom text for different styling purposes (e.g., content for pseudo-elements).
+
+:root {
+  --tooltip-content: "This is a tooltip!";
+}
+
+.tooltip::after {
+  content: var(--tooltip-content);
+}
+9. Opacity
+Store opacity values between 0 and 1 for semi-transparent styles.
+
+:root {
+  --button-opacity: 0.8;
+}
+
+button {
+  opacity: var(--button-opacity);
+}
+10. Border Radius
+Store radius values for rounded corners, such as 5px or 50% (useful for making elements circular).
+
+:root {
+  --border-radius: 8px;
+}
+
+.card {
+  border-radius: var(--border-radius);
+}
+These variable values can be combined, customized, and adapted based on specific requirements, offering flexibility in styling. */
+
+:root {
+  --color: cadetblue;
+  --font-size: 40px;
+  --pfontsize: 2rem;
+  --border-radius: 8px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+li {
+  padding: 20px;
+  font-size: var(--font-size);
+}
+nav {
+  background-color: var(--color);
+  border: 2px solid gold;
+  border-radius: var(--border-radius);
+}
+p {
+  font-size: var(--pfontsize);
+  border: 3px solid black;
+  border-radius: var(--border-radius);
+}
