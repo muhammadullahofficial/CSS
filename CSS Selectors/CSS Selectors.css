@@ -54,5 +54,17 @@ h1::before {
   content: "⭐ ";
   color: gold;
 }
+h1::after {
+  content: " Hi ";
+  color: rgb(44, 224, 20);
+}
+
+::selection {
+  color: aqua;
+  background-color: black;
+}
+input::placeholder {
+  color: red;
+}
 
 /* This file is written by Codig Hero */
