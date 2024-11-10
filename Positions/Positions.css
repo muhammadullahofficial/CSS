@@ -1,4 +1,4 @@
-/* 
+﻿/* 
 The position property in CSS controls how elements are positioned in the layout of a webpage. It determines the positioning method and, in some cases, allows you to adjust the exact placement of an element. Here’s a breakdown of the main values for the position property and how each one works:
 
 1. static
@@ -30,8 +30,6 @@ Behavior: Other elements do not see the absolute element as taking up space, so 
 
 Use Case: Commonly used for dropdowns, modals, or elements that need to be in a precise location relative to another element.
 
-css
-Copy code
 position: absolute;
 top: 0;
 right: 0;
