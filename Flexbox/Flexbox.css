@@ -1,0 +1,119 @@
+/* CSS Flexbox (Flexible Box Layout) is a CSS layout model designed to help create more responsive and flexible web layouts. It’s particularly useful for building one-dimensional layouts, meaning layouts in either a row or a column. Here's a quick guide to the basics of Flexbox:
+
+1. Setting Up Flexbox
+To use Flexbox, start by setting the container’s display property to flex:
+
+.container {
+  display: flex;
+}
+Once set, all child elements inside .container become "flex items" and can be positioned along two axes: the main axis and the cross axis.
+
+2. Main Axis and Cross Axis
+Main Axis: Defined by the flex-direction property, it’s the primary direction along which the items are arranged. For example, row arranges items horizontally, and column arranges them vertically.
+Cross Axis: The perpendicular direction to the main axis.
+3. Key Flexbox Properties
+On the Container (Parent)
+flex-direction: Controls the direction of the main axis.
+
+row (default): Items go horizontally.
+column: Items go vertically.
+
+.container {
+  flex-direction: row;  or column 
+}
+justify-content: Aligns items along the main axis.
+
+flex-start: Items align to the start of the container.
+center: Items align to the center.
+space-between: Space is distributed between items.
+space-around: Space is distributed around items.
+
+.container {
+  justify-content: space-around;
+}
+align-items: Aligns items along the cross axis.
+
+flex-start, center, stretch, and flex-end.
+
+.container {
+  align-items: center;
+}
+flex-wrap: Controls if items should wrap onto multiple lines.
+
+nowrap (default): Items stay on one line.
+wrap: Items wrap to the next line when needed.
+
+.container {
+  flex-wrap: wrap;
+}
+On the Items (Children)
+flex: A shorthand for flex-grow, flex-shrink, and flex-basis, controlling the size of the item.
+
+.item {
+  flex: 1;  Distributes space evenly 
+}
+align-self: Overrides align-items for individual items.
+
+
+.item {
+  align-self: flex-end;
+}
+Example
+Here's a simple example to illustrate a basic Flexbox layout:
+
+<div class="container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+</div>
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  flex: 1;
+  padding: 10px;
+}
+Common Use Cases
+Centering Elements: Use justify-content: center; and align-items: center; on the container to center items both horizontally and vertically.
+Responsive Navigation Bars: Arrange items in a row with flex-direction: row; and use space-between for even spacing.
+Equal-Width Columns: Set flex: 1; on each item to have them take equal space in a row layout.
+Flexbox Tools
+Flexbox Froggy: A fun game to help you learn Flexbox.
+CSS Tricks Flexbox Guide: A thorough reference for Flexbox properties. */
+
+.container {
+  border: 2px solid black;
+  /* justify-content: center; */
+  /* align-items: center; */
+  align-content: center;
+  display: flex;
+  height: 80vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* flex-flow: wrap-reverse; */
+  /* gap: 20px; 
+  /* row-gap: 20px;
+  column-gap: 30px; */
+  gap: 20px 30px;
+}
+.item {
+  width: 85px;
+  height: 85px;
+  border: 2px solid black;
+  background-color: blueviolet;
+  /* margin: 5px; */
+}
+.last {
+  order: 1;
+}
+.fifth {
+  order: 2;
+}
+.one {
+  /* flex-grow: 4; */
+  flex-shrink: 2;
+}
