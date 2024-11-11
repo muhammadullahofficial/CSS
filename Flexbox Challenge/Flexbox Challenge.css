@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  height: 100vh;
+  width: 80vw;
+  background-color: thistle;
+  border: 1px solid black;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card {
+  height: 30%;
+  width: 20%;
+  margin: auto;
+  border: 1px solid black;
+}
+.one {
+  background-color: aquamarine;
+}
+.two {
+  background-color: darkcyan;
+}
+.three {
+  background-color: darksalmon;
+}
+.four {
+  background-color: greenyellow;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 50%;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 100%;
+    box-sizing: border-box;
+  }
+}
