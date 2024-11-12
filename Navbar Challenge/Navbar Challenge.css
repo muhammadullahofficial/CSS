@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: poppins;
+  font-size: 12px;
+}
+ul li {
+  list-style-type: none;
+}
+.logo {
+  margin: 20px 60px;
+}
+.conainer {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  bottom: 65px;
+  right: 50px;
+}
+.search {
+  padding: 0px 10px;
+}
+.translation {
+  padding: 0px 10px;
+}
+#symbol {
+  position: relative;
+  top: 8px;
+  right: 4px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: #00000096;
+}
+
+/* This challenge was given by Harry and solved by Coding Hero */
