@@ -1,0 +1,167 @@
+/* CSS animations allow you to create complex visual effects without JavaScript by defining keyframes and using various animation properties. They’re ideal for animating elements, adding loading indicators, and creating engaging UI effects.
+
+Basic Syntax
+CSS animations require two main parts:
+
+The @keyframes Rule: Defines the keyframes of the animation.
+Animation Properties: Applied to elements to control the animation's behavior.
+1. @keyframes Rule
+The @keyframes rule defines how the animation progresses over time by setting different styles at specific points (keyframes). You can define keyframes using percentages (from 0% to 100%) or keywords (from for 0%, to for 100%).
+
+@keyframes animation-name {
+    0% {
+         Starting state 
+        transform: translateX(0);
+    }
+    100% {
+        Ending state 
+        transform: translateX(100px);
+    }
+}
+2. Applying Animation Properties
+After defining keyframes, use animation properties to apply the animation to an element.
+
+animation-name: The name of the animation (matches the name in @keyframes).
+animation-duration: Duration of the animation (e.g., 2s for 2 seconds).
+animation-timing-function: Controls the pace (e.g., ease, linear, ease-in, ease-out).
+animation-delay: Start delay before the animation begins.
+animation-iteration-count: Number of times the animation repeats (e.g., infinite).
+animation-direction: Controls whether the animation reverses (e.g., normal, reverse, alternate).
+Simple Example
+Here’s a basic example where a box moves horizontally across the screen over 3 seconds and then stops.
+
+<div class="box"></div>
+@keyframes moveRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(200px);
+    }
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    animation-name: moveRight;
+    animation-duration: 3s;
+}
+Using Shorthand for Animation
+Instead of writing each property separately, you can use the shorthand animation property:
+
+.box {
+    animation: moveRight 3s ease-in-out 1s 2 alternate;
+}
+This shorthand covers:
+
+animation-name
+animation-duration
+animation-timing-function
+animation-delay
+animation-iteration-count
+animation-direction
+Advanced Example with Multiple Keyframes
+Let’s create an animation where a box scales up, rotates, and then fades out:
+
+<div class="box"></div>
+@keyframes complexAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) rotate(45deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    animation: complexAnimation 4s ease-in-out infinite;
+}
+Animation Properties
+animation-play-state: Lets you pause or play the animation (running or paused).
+
+.box:hover {
+    animation-play-state: paused;
+}
+animation-fill-mode: Determines the style of the element when the animation is not running (before it starts, after it ends).
+
+forwards: Keeps the end state after animation completes.
+backwards: Applies the starting style immediately before the animation begins.
+both: Applies both forwards and backwards behavior.
+.box {
+    animation-fill-mode: forwards;
+}
+Example of animation-fill-mode
+Here’s a pulsing circle that grows and shrinks continuously, and when it stops, it stays in its end state.
+
+<div class="circle"></div>
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+Practical Tips for CSS Animations
+Use transform and opacity for Smooth Performance: Animating properties like width or height can cause layout shifts, so transform and opacity are generally better for performance.
+Keep Durations Short: For most UI animations, aim for durations between 0.2s and 1s for a smooth, responsive feel.
+Combine with transition for Interactive Effects: Transitions work well with animations to create subtle, engaging interactions (e.g., hovering or clicking effects).
+CSS animations can add personality and interactivity to your designs.  */
+
+.bigbox {
+  height: 80vh;
+  width: 70vw;
+  border: 2px solid black;
+  background-color: aquamarine;
+  margin: auto;
+}
+.smallbox {
+  height: 200px;
+  width: 200px;
+  background-color: chartreuse;
+  border: 1px solid black;
+  border-radius: 15px;
+  animation: colorchange 2s ease-in-out 1s infinite,
+    positionchange 2s ease-in-out 1s infinite;
+}
+@keyframes colorchange {
+  0% {
+    background-color: chocolate;
+  }
+  50% {
+    background-color: crimson;
+  }
+  100% {
+    background-color: lightcoral;
+  }
+}
+@keyframes positionchange {
+  0% {
+    transform: translate(10px);
+  }
+  50% {
+    transform: translate(200px);
+  }
+  100% {
+    transform: translate(300px);
+  }
+}
