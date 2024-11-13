@@ -1,0 +1,96 @@
+/* CSS transitions allow you to smoothly animate changes in CSS properties over a specified duration. They’re particularly useful for hover effects, color changes, position adjustments, and other visual effects that enhance the user experience without requiring JavaScript.
+
+Basic Syntax
+transition: property duration timing-function delay;
+property: The CSS property you want to animate (e.g., width, color, transform). You can also use all to apply the transition to all animatable properties.
+duration: The time the transition takes to complete (e.g., 0.5s for half a second).
+timing-function: Controls the speed curve of the transition (e.g., ease, linear, ease-in, ease-out, ease-in-out, or a custom cubic-bezier function).
+delay: The time to wait before starting the transition.
+Basic Example
+Here’s a simple transition effect where a box changes color smoothly when hovered over:
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    transition: background-color 0.5s ease;
+}
+
+.box:hover {
+    background-color: #e74c3c;
+}
+Applying Multiple Properties
+You can apply transitions to multiple properties by separating each transition with a comma:
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    transform: scale(1);
+    transition: background-color 0.5s ease, transform 0.3s ease-in;
+}
+
+.box:hover {
+    background-color: #e74c3c;
+    transform: scale(1.2);
+}
+Using Shorthand
+The shorthand transition property can specify multiple properties, durations, timing functions, and delays in one line:
+
+.box {
+    transition: width 0.5s ease, height 0.3s ease-out, transform 0.4s ease-in;
+}
+Transition Timing Functions
+ease: Starts slowly, speeds up in the middle, and slows down again at the end.
+linear: Maintains a constant speed from start to finish.
+ease-in: Starts slowly and then accelerates.
+ease-out: Starts quickly and then slows down.
+ease-in-out: Starts and ends slowly, with a faster middle.
+cubic-bezier(x1, y1, x2, y2): A custom timing function that gives you control over the transition speed curve.
+Adding a Delay
+To delay the start of a transition, specify a delay in seconds (e.g., 1s or 0.5s).
+
+.box {
+    transition: background-color 0.5s ease 0.2s;
+}
+Practical Example
+Here’s a card that grows in size and changes color with a smooth transition when hovered:
+
+<div class="card"></div>
+.card {
+    width: 200px;
+    height: 300px;
+    background-color: #95a5a6;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    background-color: #2ecc71;
+    transform: scale(1.05);
+}
+Tips for Using Transitions
+Keep it Simple: Too many transitions can be distracting, so focus on the most impactful elements.
+Use Easing Wisely: The timing function can influence the effect significantly. ease-in and ease-out add polish to interactions.
+Combine with transform: For smoother performance, animate properties like transform and opacity, as these don’t trigger reflows and repainting.
+CSS transitions are an essential tool in UI/UX design, adding smooth interactivity with minimal code. Let me know if you need more advanced examples or help with other specific transitions!
+ */
+
+.parent {
+  height: 70vh;
+  width: 80vw;
+  border: 2px solid black;
+  background-color: aquamarine;
+}
+.child {
+  height: 150px;
+  width: 150px;
+  border: 1px solid black;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  transition: background-color 1s ease 0.5s, transform 1s ease 0.5s;
+}
+.child:hover {
+  background-color: brown;
+  transform: scale(1.3);
+  transform: translate(100px);
+}
