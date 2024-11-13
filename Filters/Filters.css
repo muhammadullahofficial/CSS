@@ -1,0 +1,93 @@
+/* CSS filters allow you to apply visual effects to elements, commonly used for images but also applicable to other elements like backgrounds. Here’s a rundown of popular CSS filter functions and their usage:
+
+1. blur()
+Blurs an element by a specified amount.
+
+img {
+    filter: blur(5px);  Blurs the image by 5 pixels 
+}
+2. brightness()
+Adjusts the brightness of an element. Values >100% make it brighter, <100% make it darker.
+
+img {
+    filter: brightness(150%);  Increases brightness by 50% 
+}
+3. contrast()
+Increases or decreases the contrast of an element. 100% is the default, <100% lowers contrast, >100% increases it.
+
+img {
+    filter: contrast(80%); Lowers contrast by 20% 
+}
+4. grayscale()
+Converts the element to grayscale. Values range from 0% (original color) to 100% (completely grayscale).
+
+img {
+    filter: grayscale(100%);  Turns the image black and white 
+}
+5. hue-rotate()
+Rotates the hues of the element by a specified angle in degrees (0 to 360).
+
+img {
+    filter: hue-rotate(90deg);  Changes colors by rotating hues 90 degrees 
+}
+6. invert()
+Inverts the colors of an element. Useful for night modes or special effects.
+
+img {
+    filter: invert(100%); Inverts colors to create a negative image 
+}
+7. opacity()
+Adjusts the transparency of an element. 100% is fully opaque, and 0% is fully transparent.
+
+img {
+    filter: opacity(50%);  Sets the image opacity to 50% 
+}
+8. saturate()
+Adjusts the color saturation. A value of 0% is completely desaturated (grayscale), 100% is normal saturation, and values above 100% increase saturation.
+
+img {
+    filter: saturate(200%);  Doubles the color saturation 
+}
+9. sepia()
+Applies a sepia tone (a warm, brownish tint) to the element. 100% gives a fully sepia effect.
+
+img {
+    filter: sepia(100%); Makes the image sepia-toned 
+}
+10. drop-shadow()
+Adds a shadow that follows the shape of the image or element, unlike the box-shadow, which applies a box-shaped shadow.
+
+img {
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));  Adds a 3D-like shadow 
+}
+Combining Filters
+You can apply multiple filters by separating them with spaces.
+
+img {
+    filter: grayscale(100%) brightness(80%) blur(2px); Combines grayscale, brightness, and blur 
+}
+Example with Hover Effect
+You can add filters on hover to create interactive effects:
+
+img {
+    filter: grayscale(50%);
+    transition: filter 0.3s ease;
+}
+
+img:hover {
+    filter: grayscale(0%) brightness(1.2);
+}
+CSS filters can give images and elements unique, eye-catching effects, enhancing the user experience. 
+ */
+
+img {
+  filter: blur(5px);
+  filter: contrast(80%);
+  filter: grayscale(40%);
+  filter: hue-rotate(90deg);
+  filter: invert(100%);
+  filter: opacity(100%);
+  filter: saturate(200%);
+  filter: sepia(100%);
+  filter: brightness(150%);
+}
